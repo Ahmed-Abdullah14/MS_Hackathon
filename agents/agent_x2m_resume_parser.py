@@ -3,7 +3,10 @@ import pdfplumber
 import spacy
 from fuzzywuzzy import fuzz
 from collections import defaultdict
-import os  
+import os 
+from dateutil import parser
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
 
 
 nlp = spacy.load("en_core_web_sm")
@@ -50,10 +53,7 @@ def skill_match(resume_text, required_skills, categories):
 
     return dict(matched_skills), round(score, 2)
 
-import re
-from dateutil import parser
-from datetime import datetime
-from dateutil.relativedelta import relativedelta
+
 
 def extract_experience_duration(resume_text: str) -> str:
     """
