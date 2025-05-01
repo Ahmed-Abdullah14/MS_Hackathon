@@ -48,18 +48,18 @@ RecruitEdge AI solves this by using AI agents powered by Large Language Models (
 
 ```
 +---------------------------+
-|               |
-|  Manager Agent |
+|                           |
+|      Manager Agent        |
 +---------------------------+
              ↓
 +---------------------------+
-|                 |
-|JD Agent|
+|                           |
+|         JD Agent          |
 +---------------------------+
              ↓
 +---------------------------+
-|               |
-|   JD Matcher Agent |
+|                           |
+|     JD Matcher Agent      |
 +---------------------------+
 ```
 
@@ -68,11 +68,11 @@ The Manager Agent communicates with the user and manages the other two agents ba
 ---
 
 ## 🚀 Future Enhancements
-
-- UI dashboard for recruiters  
-- Real-time chatbot assistant (via Azure Bot Service)  
-- Slack/Teams integration for notifications  
-- Candidate feedback generation  
+  
+- Semantic search with vector embeddings for smarter candidate filtering 
+- Advanced web profiler for deeper GitHub and LinkedIn insights
+- UI dashboard for recruiters
+- Auto-generated emails for interviews and hiring steps
 
 ## Requirements
 
