@@ -14,8 +14,9 @@ def kernel_init():
     load_dotenv()
 
     client = AsyncOpenAI(
-        api_key=os.environ.get("GITHUB_TOKEN"), 
-        base_url="https://models.inference.ai.azure.com/",
+        api_key=os.environ.get("OPEN_AI_API_KEY")
+        #api_key=os.environ.get("GITHUB_TOKEN"), 
+        #base_url="https://models.inference.ai.azure.com/",
     )
 
 # Create an AI Service that will be used by the `ChatCompletionAgent`
