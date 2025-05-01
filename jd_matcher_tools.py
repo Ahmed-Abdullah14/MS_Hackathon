@@ -9,13 +9,7 @@ class JDMatcherTools:
     def __init__(self):
         self.root_dir = os.path.abspath(os.path.dirname(__file__))  # Already at project root
         self.cv_dir = os.path.normpath(os.path.join(self.root_dir, "data", "resumes"))
-        # self.cv_dir = "data/resumes"
-        # self.root_dir = os.path.dirname(os.path.abspath(__file__))
-        # self.root_dir = os.path.dirname(self.root_dir)  # Move up one level to the root workspace
-        # self.cv_dir = os.path.normpath(os.path.join(self.root_dir, self.cv_dir))
-        # self.cv_dir = os.path.normpath(
-        #     os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "resumes")
-        # )
+
 
     def extract_text_from_pdf(self, path):
         with pdfplumber.open(path) as pdf:
@@ -38,20 +32,3 @@ class JDMatcherTools:
         resumes = self.load_and_parse_resumes()
         return json.dumps(resumes)  # To be passed into the next tool
 
-    # @kernel_function(
-    #     name="embed_and_store",
-    #     description="Creates embeddings for resumes and a given job description, and stores them in Pinecone."
-    # )
-    # def embed_and_store(self, resumes: str, job_description: str) -> str:
-    #     try:
-    #         resumes = json.loads(resumes)
-    #     except Exception as e:
-    #         return f"❌ Failed to parse resume input: {e}"
-
-    #     resume_embeddings = create_resume_embeddings(resumes)
-    #     jd_embedding = create_jd_embedding(job_description)
-
-    #     upsert_to_pinecone(resume_embeddings, namespace="resumes")
-    #     upsert_to_pinecone([jd_embedding], namespace="job_description")
-
-    #     return "✅ Embeddings stored in Pinecone successfully."
